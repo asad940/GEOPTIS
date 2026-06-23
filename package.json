@@ -1,0 +1,27 @@
+{
+  "name": "geoptis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run build:watch --prefix frontend\" \"nodemon backend/bin/www\"",
+    "build": "npm run build --prefix frontend",
+    "start": "node backend/bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asad940/GEOPTIS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/asad940/GEOPTIS/issues"
+  },
+  "homepage": "https://github.com/asad940/GEOPTIS#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.3",
+    "nodemon": "^3.1.14"
+  }
+}
