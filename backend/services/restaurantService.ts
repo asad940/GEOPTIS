@@ -4,16 +4,21 @@ import { badRequest } from '../errors';
 
 const CUISINE_TYPES: CuisineType[] = ['Française', 'Italienne', 'Asiatique', 'Américaine', 'Méditerranéenne', 'Autre'];
 
+const LAT_MIN = -90;
+const LAT_MAX = 90;
+const LNG_MIN = -180;
+const LNG_MAX = 180;
+
 /** Vérifie que la latitude et la longitude sont des nombres dans les plages autorisées. */
 function validateCoordinates(latitude: any, longitude: any): { lat: number; lng: number } {
   const lat = parseFloat(latitude);
   const lng = parseFloat(longitude);
 
-  if (isNaN(lat) || lat < -90 || lat > 90)
-    throw badRequest('Latitude invalide : doit être un nombre décimal entre -90 et 90');
+  if (isNaN(lat) || lat < LAT_MIN || lat > LAT_MAX)
+    throw badRequest(`Latitude invalide : doit être un nombre décimal entre ${LAT_MIN} et ${LAT_MAX}`);
 
-  if (isNaN(lng) || lng < -180 || lng > 180)
-    throw badRequest('Longitude invalide : doit être un nombre décimal entre -180 et 180');
+  if (isNaN(lng) || lng < LNG_MIN || lng > LNG_MAX)
+    throw badRequest(`Longitude invalide : doit être un nombre décimal entre ${LNG_MIN} et ${LNG_MAX}`);
 
   return { lat, lng };
 }

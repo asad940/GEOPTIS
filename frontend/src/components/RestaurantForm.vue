@@ -110,14 +110,14 @@ async function handleSubmit() {
     <div class="form-row">
       <div class="form-group" :class="{ error: errors.latitude }">
         <label for="latitude">Latitude *</label>
-        <input id="latitude" v-model="form.latitude" type="number" step="any" placeholder="48.8529" />
+        <input id="latitude" v-model="form.latitude" type="number" step="any" min="-90" max="90" placeholder="48.8529" />
         <span class="hint">Entre -90 et 90</span>
         <span v-if="errors.latitude" class="error-msg">{{ errors.latitude }}</span>
       </div>
 
       <div class="form-group" :class="{ error: errors.longitude }">
         <label for="longitude">Longitude *</label>
-        <input id="longitude" v-model="form.longitude" type="number" step="any" placeholder="2.3387" />
+        <input id="longitude" v-model="form.longitude" type="number" step="any" min="-180" max="180" placeholder="2.3387" />
         <span class="hint">Entre -180 et 180</span>
         <span v-if="errors.longitude" class="error-msg">{{ errors.longitude }}</span>
       </div>

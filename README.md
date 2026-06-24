@@ -2,6 +2,8 @@
 
 Application full-stack de gestion de restaurants avec géolocalisation.
 
+---
+
 ## Prérequis
 
 ### Node.js v16+
@@ -14,8 +16,6 @@ node -v
 Si non installé :
 - **macOS** : `brew install node`
 - **Windows / Linux** : télécharger sur [nodejs.org](https://nodejs.org)
-
----
 
 ### PostgreSQL 16
 
@@ -44,6 +44,14 @@ Télécharger l'installeur sur [postgresql.org/download/windows](https://www.pos
 
 ---
 
+## Installation
+
+```bash
+git clone https://github.com/asad940/GEOPTIS.git
+cd GEOPTIS
+npm run setup
+```
+
 ## Configuration
 
 Copier le fichier d'exemple et l'adapter si besoin :
@@ -63,14 +71,6 @@ DB_PASSWORD=<votre_mot_de_passe>
 
 > Sur macOS avec Homebrew, `DB_USER` est généralement votre nom d'utilisateur système et `DB_PASSWORD` est vide.
 
-## Installation
-
-```bash
-git clone https://github.com/asad940/GEOPTIS.git
-cd GEOPTIS
-npm run setup
-```
-
 ## Base de données
 
 ```bash
@@ -84,6 +84,8 @@ npm run dev
 ```
 
 L'application est accessible sur **http://localhost:3000**
+
+---
 
 ## Scripts disponibles
 
