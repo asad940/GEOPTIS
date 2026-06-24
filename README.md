@@ -44,6 +44,25 @@ Télécharger l'installeur sur [postgresql.org/download/windows](https://www.pos
 
 ---
 
+## Configuration
+
+Copier le fichier d'exemple et l'adapter si besoin :
+
+```bash
+cp .env.example backend/.env
+```
+
+Contenu de `backend/.env` :
+```
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=geoptis
+DB_USER=<votre_utilisateur_postgres>
+DB_PASSWORD=<votre_mot_de_passe>
+```
+
+> Sur macOS avec Homebrew, `DB_USER` est généralement votre nom d'utilisateur système et `DB_PASSWORD` est vide.
+
 ## Installation
 
 ```bash
