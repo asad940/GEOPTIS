@@ -40,6 +40,7 @@ L'application est accessible sur **http://localhost:3000**
 |---|---|
 | `npm run setup` | Installe toutes les dépendances |
 | `npm run db:setup` | Crée la base de données et exécute le schéma SQL |
+| `npm run db:clean` | Supprime la base de données entière |
 | `npm run dev` | Lance le backend et le frontend en parallèle |
 | `npm run build` | Compile le frontend avec Vite |
 | `npm run clean` | Supprime les `node_modules` et fichiers générés |

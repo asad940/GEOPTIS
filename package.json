@@ -7,9 +7,10 @@
     "dev": "concurrently \"npm run build:watch --prefix frontend\" \"nodemon --watch backend --ext ts --exec ./backend/node_modules/.bin/ts-node --project backend/tsconfig.json backend/app.ts\"",
     "build": "npm run build --prefix frontend",
     "start": "node backend/dist/bin/www",
-    "clean": "rm -rf node_modules backend/node_modules frontend/node_modules backend/public/assets backend/dist pdf-style.css",
+    "clean": "rm -rf node_modules backend/node_modules frontend/node_modules backend/public/assets backend/dist",
     "setup": "npm install && npm install --prefix backend && npm install --prefix frontend",
-    "db:setup": "psql postgres -c \"CREATE DATABASE geoptis;\" && psql geoptis < backend/schema.sql"
+    "db:setup": "psql postgres -c \"CREATE DATABASE geoptis;\" 2>/dev/null; psql geoptis < backend/schema.sql",
+    "db:clean": "psql postgres -c \"DROP DATABASE IF EXISTS geoptis;\""
   },
   "repository": {
     "type": "git",
