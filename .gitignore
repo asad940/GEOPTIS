@@ -1,1 +1,22 @@
+# Dépendances
 node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Build frontend généré automatiquement par Vite
+backend/public/assets/
+
+# Variables d'environnement
+.env
+.env.local
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# TypeScript compilé
+backend/dist/
