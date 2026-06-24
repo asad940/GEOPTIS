@@ -1,10 +1,10 @@
 import { ref, computed } from 'vue';
 import { restaurantService } from '../services/restaurant.service';
-import type { CreateRestaurantDto } from '../models/restaurant.model';
+import type { CreateRestaurantDto, Restaurant, PaginatedResult } from '../models/restaurant.model';
 
 export function useRestaurants() {
-  const paginated = ref<any>(null);
-  const filteredList = ref<any[]>([]);
+  const paginated = ref<PaginatedResult<Restaurant> | null>(null);
+  const filteredList = ref<Restaurant[]>([]);
   const loading = ref(false);
   const error = ref('');
 
