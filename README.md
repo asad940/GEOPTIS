@@ -4,13 +4,45 @@ Application full-stack de gestion de restaurants avec géolocalisation.
 
 ## Prérequis
 
-- Node.js v16+
-- PostgreSQL 16 installé et démarré
+### Node.js v16+
 
+Vérifier si Node.js est installé :
 ```bash
-# macOS
-brew services start postgresql@16
+node -v
 ```
+
+Si non installé :
+- **macOS** : `brew install node`
+- **Windows / Linux** : télécharger sur [nodejs.org](https://nodejs.org)
+
+---
+
+### PostgreSQL 16
+
+Vérifier si PostgreSQL est installé :
+```bash
+psql --version
+```
+
+**macOS :**
+```bash
+brew install postgresql@16
+brew services start postgresql@16
+echo 'export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+**Ubuntu / Debian :**
+```bash
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+sudo systemctl start postgresql
+```
+
+**Windows :**
+Télécharger l'installeur sur [postgresql.org/download/windows](https://www.postgresql.org/download/windows/) et suivre l'assistant d'installation.
+
+---
 
 ## Installation
 
