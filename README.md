@@ -4,9 +4,38 @@ Application full-stack de gestion de restaurants avec géolocalisation.
 
 ---
 
-## Prérequis
+## Lancement avec Docker (recommandé)
 
-### Node.js v16+
+La méthode la plus simple : aucune installation de Node.js ou PostgreSQL requise.
+
+**Installer Docker Desktop :**
+- **macOS / Windows** : télécharger sur [docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop/) et suivre l'assistant
+- **Ubuntu / Debian** :
+```bash
+sudo apt update
+sudo apt install docker.io docker-compose-plugin
+sudo systemctl start docker
+```
+
+Une fois Docker installé et démarré, vous n'avez plus qu'à faire :
+
+```bash
+git clone https://github.com/asad940/GEOPTIS.git
+cd GEOPTIS
+docker compose up --build
+```
+
+L'application est accessible sur **http://localhost:3000**
+
+La base de données est créée et le schéma est appliqué automatiquement au premier démarrage.
+
+---
+
+## Lancement sans Docker (installation manuelle)
+
+### 1. Prérequis
+
+#### Node.js v16+
 
 Vérifier si Node.js est installé :
 ```bash
@@ -17,7 +46,7 @@ Si non installé :
 - **macOS** : `brew install node`
 - **Windows / Linux** : télécharger sur [nodejs.org](https://nodejs.org)
 
-### PostgreSQL 16
+#### PostgreSQL 16
 
 Vérifier si PostgreSQL est installé :
 ```bash
@@ -42,19 +71,9 @@ sudo systemctl start postgresql
 **Windows :**
 Télécharger l'installeur sur [postgresql.org/download/windows](https://www.postgresql.org/download/windows/) et suivre l'assistant d'installation.
 
----
+### 2. Configuration
 
-## Installation
-
-```bash
-git clone https://github.com/asad940/GEOPTIS.git
-cd GEOPTIS
-npm run setup
-```
-
-## Configuration
-
-Copier le fichier d'exemple et l'adapter si besoin :
+Copier le fichier d'exemple et l'adapter :
 
 ```bash
 cp .env.example backend/.env
@@ -71,19 +90,15 @@ DB_PASSWORD=<votre_mot_de_passe>
 
 > Sur macOS avec Homebrew, `DB_USER` est généralement votre nom d'utilisateur système et `DB_PASSWORD` est vide.
 
-## Base de données
+### 3. Installation et lancement
 
 ```bash
+git clone https://github.com/asad940/GEOPTIS.git
+cd GEOPTIS
+npm run setup
 npm run db:setup
-```
-
-## Lancement
-
-```bash
 npm run dev
 ```
-
-L'application est accessible sur **http://localhost:3000**
 
 ---
 
